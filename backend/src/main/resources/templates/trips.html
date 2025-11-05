@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trips</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 24px; }
+    h1 { margin: 0 0 8px; }
+    .note { opacity: .7; margin-bottom: 14px; }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 12px; }
+    th, td { padding: 12px; border-bottom: 1px solid #e5e7eb; font-size: 14px; }
+    th { text-align: left; background: #f1f5f9; }
+    tr:hover { background: #f8fafc; }
+    a.btn { padding: 8px 12px; border-radius: 8px; background: #2563eb; color: white; text-decoration: none; }
+    .actions a { margin-right: 8px; }
+    .toplinks a { margin-right: 12px; }
+  </style>
+</head>
+<body>
+  <div class="toplinks">
+    <a href="http://localhost:3000/index.html">Home</a>
+    <a href="http://localhost:3000/add-trip.html">Add Trip</a>
+    <a href="/calendar">Calendar</a>
+  </div>
+  <h1>All Trips</h1>
+  <p class="note">Total trips: <strong th:text="${count}">0</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Trip Name</th>
+        <th>Destination</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Mode</th>
+        <th>Notes</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="t, i : ${trips}">
+        <td th:text="${i.index + 1}">1</td>
+        <td th:text="${t.tripName}">Goa</td>
+        <td th:text="${t.destination}">Goa</td>
+        <td th:text="${t.startDate}">2025-01-01</td>
+        <td th:text="${t.endDate}">2025-01-05</td>
+        <td th:text="${t.transportMode}">Train</td>
+        <td th:text="${t.notes}">Beach time</td>
+        <td class="actions">
+          <a class="btn" th:href="@{'/delete/' + ${t.id}}">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

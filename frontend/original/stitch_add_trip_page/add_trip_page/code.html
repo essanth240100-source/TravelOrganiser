@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Plan Your Next Adventure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#308ce8",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111921",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-gradient-to-br from-[#A8D0E6] to-[#F8E9A1] dark:from-[#1a2c3d] dark:to-[#3a321a] group/design-root overflow-x-hidden items-center justify-center p-4">
+<div class="w-full max-w-lg">
+<header class="relative flex items-center justify-center p-4 pb-2">
+<button class="absolute left-0 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full text-slate-800 dark:text-slate-200 transition-colors hover:bg-black/5 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold">Create a New Trip</h2>
+</header>
+<main class="w-full bg-background-light dark:bg-background-dark rounded-xl shadow-lg p-4 sm:p-6 md:p-8 mt-4">
+<div class="space-y-6">
+<div class="flex flex-col">
+<label class="text-slate-800 dark:text-slate-200 text-base font-medium pb-2" for="tripName">Trip Name</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal transition-all duration-200 ease-in-out" id="tripName" placeholder="Summer in Italy" value=""/>
+</div>
+<div class="flex flex-col">
+<label class="text-slate-800 dark:text-slate-200 text-base font-medium pb-2" for="destination">Destination</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal transition-all duration-200 ease-in-out" id="destination" placeholder="Rome, Italy" value=""/>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-end gap-4">
+<label class="flex flex-col min-w-40 flex-1" for="startDate">
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium pb-2">Start Date</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal transition-all duration-200 ease-in-out" id="startDate" type="date" value=""/>
+</label>
+<label class="flex flex-col min-w-40 flex-1" for="endDate">
+<p class="text-slate-800 dark:text-slate-200 text-base font-medium pb-2">End Date</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal transition-all duration-200 ease-in-out" id="endDate" type="date" value=""/>
+</label>
+</div>
+<div class="flex flex-col">
+<label class="text-slate-800 dark:text-slate-200 text-base font-medium pb-2" for="transportMode">Transport Mode</label>
+<div class="relative">
+<select class="form-select appearance-none flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal transition-all duration-200 ease-in-out" id="transportMode">
+<option>Car</option>
+<option>Train</option>
+<option>Flight</option>
+<option>Bus</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-slate-800 dark:text-slate-200 text-base font-medium pb-2" for="notes">Notes</label>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-slate-900 dark:text-slate-50 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 min-h-[120px] placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal transition-all duration-200 ease-in-out" id="notes" placeholder="Remember to book museum tickets..."></textarea>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg bg-primary h-14 px-4 text-base font-bold text-white transition-transform duration-200 ease-in-out hover:scale-[1.02]">Save Trip</button>
+</div>
+</main>
+</div>
+</div>
+</body></html>
