@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Travel Organizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #e6f0ff;
+      --bg2: #ffe7e0;
+      --card: #ffffff;
+      --text: #0f172a;
+      --accent: #2563eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 980px;
+      padding: 24px;
+    }
+    .hero {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 28px;
+      display: grid;
+      gap: 16px;
+      text-align: center;
+    }
+    h1 { margin: 0; font-size: 28px; }
+    p.lead { margin: 0; opacity: 0.8; }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+    a.btn {
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+    }
+    a.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,99,235,0.35); }
+    .secondary { background: #0ea5e9; box-shadow: 0 6px 16px rgba(14,165,233,0.35); }
+    .outline {
+      background: transparent; color: var(--accent); border: 2px solid var(--accent);
+      box-shadow: none;
+    }
+    .note {
+      font-size: 13px; opacity: .75;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Travel Organizer</h1>
+      <p class="lead">Plan your journeys, store trips, and see them on a calendar.</p>
+      <div class="actions">
+        <a class="btn" href="./add-trip.html">Plan a New Trip</a>
+        <a class="btn secondary" href="http://localhost:8080/trips">View Trips </a>
+        <a class="btn outline" href="http://localhost:8080/calendar">Open Calendar </a>
+      </div>
+      <p class="note">Your original uploaded frontend is preserved in <code>/frontend/original/</code>.</p>
+    </section>
+  </div>
+</body>
+</html>
