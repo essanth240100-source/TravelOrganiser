@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #e6f0ff;
+      --bg2: #ffe7e0;
+      --card: #ffffff;
+      --text: #0f172a;
+      --accent: #2563eb;
+      --muted: #64748b;
+      --input: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 24px;
+    }
+    h1 { margin: 0 0 14px; font-size: 24px; }
+    p { margin: 0 0 20px; color: var(--muted); }
+    form { display: grid; gap: 14px; }
+    label { font-weight: 600; font-size: 14px; }
+    input, select, textarea {
+      width: 100%; border: 1px solid #e2e8f0; background: var(--input);
+      border-radius: 12px; padding: 12px 14px; font-size: 14px;
+      outline: none; transition: box-shadow .15s ease, border-color .15s ease;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    button, a.btn {
+      cursor: pointer; border: 0; padding: 12px 18px; border-radius: 999px;
+      background: var(--accent); color: white; font-weight: 600;
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+      text-decoration: none; display: inline-block; text-align: center;
+    }
+    button:hover, a.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,99,235,0.35); }
+    .actions { display: flex; gap: 12px; justify-content: flex-end; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Plan a New Trip</h1>
+    <p>Fill the details and submit — it will be saved to the backend.</p>
+    <form method="post" action="http://localhost:8080/addTrip">
+      <label>Trip Name
+        <input type="text" name="tripName" required />
+      </label>
+      <label>Destination
+        <input type="text" name="destination" required />
+      </label>
+      <div class="row">
+        <label>Start Date
+          <input type="date" name="startDate" required />
+        </label>
+        <label>End Date
+          <input type="date" name="endDate" required />
+        </label>
+      </div>
+      <label>Transport Mode
+        <select name="transportMode" required>
+          <option value="Car">Car</option>
+          <option value="Train">Train</option>
+          <option value="Flight">Flight</option>
+          <option value="Bus">Bus</option>
+        </select>
+      </label>
+      <label>Notes
+        <textarea name="notes" rows="4" placeholder="Anything to remember?"></textarea>
+      </label>
+      <div class="actions">
+        <a class="btn" href="./index.html">Back</a>
+        <button type="submit">Save Trip</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
